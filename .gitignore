@@ -1,0 +1,63 @@
+# =============================================================================
+# CineAI - .gitignore
+# =============================================================================
+
+# Virtual Environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MovieLens raw large datasets (ratings.csv, ratings.dat, ml-1m.zip, etc.)
+# Re-downloadable anytime via: python data/download_data.py --size 1m
+data/raw/*.csv
+data/raw/*.dat
+data/raw/*.zip
+data/raw/ml-1m/
+data/raw/ml-25m/
+!data/raw/.gitkeep
+
+# PySpark / Hadoop checkpoints & temp files
+.checkpoint/
+metastore_db/
+derby.log
+spark-warehouse/
+*.tmp
+temp/
+logs/*.log
+*.crc
+.*.crc
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit local credentials / configs
+.streamlit/secrets.toml

@@ -1,0 +1,9 @@
+{
+  "num_users": 6040,
+  "num_movies": 3416,
+  "num_ratings_total": 999611,
+  "num_ratings_train": 799562,
+  "num_ratings_test": 200049,
+  "avg_rating": 3.5819743880369463,
+  "sparsity": 0.9515519584503
+}

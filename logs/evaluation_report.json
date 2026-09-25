@@ -1,0 +1,37 @@
+{
+  "rating_metrics": {
+    "rmse": 0.8678,
+    "mae": 0.6959,
+    "r2": 0.3942
+  },
+  "ranking_metrics": {
+    "precision@10": 0.0497,
+    "recall@10": 0.0368
+  },
+  "coverage": {
+    "user_coverage_pct": 100.0,
+    "catalog_coverage_pct": 22.76
+  },
+  "rating_distribution": [
+    {
+      "rating": 1.0,
+      "count": 11016
+    },
+    {
+      "rating": 2.0,
+      "count": 21478
+    },
+    {
+      "rating": 3.0,
+      "count": 52202
+    },
+    {
+      "rating": 4.0,
+      "count": 69800
+    },
+    {
+      "rating": 5.0,
+      "count": 45553
+    }
+  ]
+}

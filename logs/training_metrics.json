@@ -1,0 +1,29 @@
+{
+  "best_hyperparams": {
+    "rank": 50,
+    "regParam": 0.1,
+    "maxIter": 10
+  },
+  "test_metrics": {
+    "rmse": 0.8678,
+    "mae": 0.6959,
+    "coverage_pct": 100.0
+  },
+  "training_time_seconds": 60.8,
+  "total_param_combinations": 2,
+  "cv_folds": 3,
+  "cv_results": [
+    {
+      "rank": 50,
+      "regParam": 0.1,
+      "maxIter": 10,
+      "cv_rmse": 0.8768
+    },
+    {
+      "rank": 10,
+      "regParam": 0.1,
+      "maxIter": 10,
+      "cv_rmse": 0.8816
+    }
+  ]
+}
