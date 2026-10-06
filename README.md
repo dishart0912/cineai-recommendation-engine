@@ -30,6 +30,7 @@
 - [Performance & Evaluation Benchmarks](#-performance--evaluation-benchmarks)
 - [API Reference](#-api-reference)
 - [Cluster & Cloud Scaling (HDFS / Cloud)](#-cluster--cloud-scaling)
+- [BDA Experiments Mapping](#-bda-experiments-mapping)
 - [Troubleshooting & FAQs](#-troubleshooting--faqs)
 - [Pushing to GitHub](#-pushing-to-github)
 
@@ -410,8 +411,31 @@ git push -u origin main
 
 ---
 
+---
+
+## 🔬 BDA Experiments Mapping
+
+CineAI is designed to demonstrate key Big Data Analytics (BDA) syllabus concepts in an end-to-end production architecture:
+
+| Exp # | Official Experiment Title | CineAI Implementation | Demonstrable Script / File |
+| :---: | :--- | :--- | :--- |
+| **Exp 1** | Hadoop & HDFS Command Suite | HDFS distributed namespace creation, block uploads, replication inspection | `bda_lab/hdfs_ingest.bat` |
+| **Exp 4** | Hadoop MapReduce WordCount | Mapper and Reducer streaming for Movie Genre frequencies and Title keywords | `bda_lab/mapreduce/run_mapreduce.py` |
+| **Exp 6** | Hive DB & Descriptive Analytics | Schema-on-Read external tables, rating mean, variance, stddev, matrix sparsity | `bda_lab/run_hive_stats.py` (`hive_analytics.hql`) |
+| **Exp 7** | MongoDB NoSQL Database | Nested document store for user recommendations and real-time rating event logs | `bda_lab/mongo_manager.py` |
+| **Exp 8** | Bloom Filter | Constant-time $O(k)$ memory-efficient deduplication of already-watched movies | `bda_lab/bloom_filter.py` |
+| **Exp 9** | Flajolet-Martin (FM) Algorithm | Streaming cardinality estimation of distinct active users via trailing zeros | `bda_lab/flajolet_martin.py` |
+| **Exp 10**| Data Visualization using R | Publication-quality EDA charts using R `ggplot2` (rating decay, genre spread) | `bda_lab/run_r_plots.py` (`visualizations.R`) |
+| **Exp 12**| Big Data 5Vs & Distributed ML | PySpark distributed ALS matrix factorisation ($R \approx U \times V^T$) on workers | `spark/train_als.py`, `ui/app.py` |
+| **Exp 13**| Social Graph Mining (GN & CPM) | Girvan-Newman edge-betweenness clusters and Clique Percolation overlapping films | `bda_lab/graph_mining.py` |
+
+All experiments are interactively demonstrable in the **Streamlit UI** under the **"🔬 BDA Lab Cockpit"** page!
+
+---
+
 ## 📜 License & Acknowledgments
 
 - **Dataset**: Provided by [GroupLens Research](https://grouplens.org/datasets/movielens/) (MovieLens 1M / 25M).
 - **Matrix Factorization Reference**: *Matrix Factorization Techniques for Recommender Systems* (Yehuda Koren, Robert Bell, Chris Volinsky, 2009).
 - **License**: MIT License. Open for educational and research use.
+

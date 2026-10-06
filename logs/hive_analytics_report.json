@@ -1,0 +1,112 @@
+{
+  "execution_engine": "HiveQL via Spark SQL Metastore",
+  "runtime_seconds": 21.23,
+  "descriptive_statistics": {
+    "total_ratings": 1000209,
+    "mean_rating": 3.582,
+    "variance_rating": 1.248,
+    "stddev_rating": 1.117,
+    "min_rating": 1,
+    "max_rating": 5
+  },
+  "matrix_dimensions": {
+    "users": 6040,
+    "movies": 3706,
+    "total_ratings": 1000209,
+    "sparsity_pct": 95.53
+  },
+  "top_genres": [
+    {
+      "genre_group": "Animation|Comedy|Thriller",
+      "total_reviews": 688,
+      "avg_score": 4.47,
+      "score_volatility": 0.74
+    },
+    {
+      "genre_group": "Sci-Fi|War",
+      "total_reviews": 1367,
+      "avg_score": 4.45,
+      "score_volatility": 0.81
+    },
+    {
+      "genre_group": "Film-Noir|Mystery",
+      "total_reviews": 1584,
+      "avg_score": 4.37,
+      "score_volatility": 0.78
+    },
+    {
+      "genre_group": "Adventure|War",
+      "total_reviews": 1644,
+      "avg_score": 4.35,
+      "score_volatility": 0.79
+    },
+    {
+      "genre_group": "Action|Adventure|Drama|Sci-Fi|War",
+      "total_reviews": 2990,
+      "avg_score": 4.29,
+      "score_volatility": 0.84
+    },
+    {
+      "genre_group": "Film-Noir|Sci-Fi",
+      "total_reviews": 1800,
+      "avg_score": 4.27,
+      "score_volatility": 0.88
+    },
+    {
+      "genre_group": "Crime|Film-Noir",
+      "total_reviews": 867,
+      "avg_score": 4.26,
+      "score_volatility": 0.81
+    },
+    {
+      "genre_group": "Film-Noir",
+      "total_reviews": 802,
+      "avg_score": 4.26,
+      "score_volatility": 0.86
+    },
+    {
+      "genre_group": "Adventure|Children's|Drama|Musical",
+      "total_reviews": 1718,
+      "avg_score": 4.25,
+      "score_volatility": 0.9
+    },
+    {
+      "genre_group": "Action|Adventure|Romance|War",
+      "total_reviews": 1057,
+      "avg_score": 4.25,
+      "score_volatility": 0.82
+    }
+  ],
+  "top_movies": [
+    {
+      "movieId": 318,
+      "title": "Shawshank Redemption, The (1994)",
+      "vote_count": 2227,
+      "average_score": 4.55
+    },
+    {
+      "movieId": 858,
+      "title": "Godfather, The (1972)",
+      "vote_count": 2223,
+      "average_score": 4.52
+    },
+    {
+      "movieId": 50,
+      "title": "Usual Suspects, The (1995)",
+      "vote_count": 1783,
+      "average_score": 4.52
+    },
+    {
+      "movieId": 527,
+      "title": "Schindler's List (1993)",
+      "vote_count": 2304,
+      "average_score": 4.51
+    },
+    {
+      "movieId": 1198,
+      "title": "Raiders of the Lost Ark (1981)",
+      "vote_count": 2514,
+      "average_score": 4.48
+    }
+  ]
+}

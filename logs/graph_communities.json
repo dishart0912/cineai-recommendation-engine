@@ -1,0 +1,1197 @@
+{
+  "num_nodes": 50,
+  "num_edges": 105,
+  "graph_density": 0.0857,
+  "num_girvan_newman_communities": 18,
+  "girvan_newman_clusters": [
+    {
+      "community_id": 0,
+      "size": 1,
+      "sample_movies": [
+        "Toy Story (1995)"
+      ]
+    },
+    {
+      "community_id": 1,
+      "size": 24,
+      "sample_movies": [
+        "Braveheart (1995)",
+        "Star Wars: Episode IV - A New Hope (1977)",
+        "Fugitive, The (1993)",
+        "Jurassic Park (1993)"
+      ]
+    },
+    {
+      "community_id": 2,
+      "size": 1,
+      "sample_movies": [
+        "Independence Day (ID4) (1996)"
+      ]
+    },
+    {
+      "community_id": 3,
+      "size": 10,
+      "sample_movies": [
+        "Usual Suspects, The (1995)",
+        "Pulp Fiction (1994)",
+        "Shawshank Redemption, The (1994)",
+        "Schindler's List (1993)"
+      ]
+    },
+    {
+      "community_id": 4,
+      "size": 1,
+      "sample_movies": [
+        "Wizard of Oz, The (1939)"
+      ]
+    }
+  ],
+  "num_cpm_communities": 2,
+  "cpm_overlapping_nodes_count": 1,
+  "overlapping_sample_movies": [
+    "Saving Private Ryan (1998)"
+  ],
+  "nodes": [
+    {
+      "id": 1,
+      "title": "Toy Story (1995)",
+      "genres": "Animation|Children's|Comedy",
+      "degree": 0,
+      "gn_community": 0,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 260,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "genres": "Action|Adventure|Fantasy|Sci-Fi",
+      "degree": 14,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2571,
+      "title": "Matrix, The (1999)",
+      "genres": "Action|Sci-Fi|Thriller",
+      "degree": 14,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 780,
+      "title": "Independence Day (ID4) (1996)",
+      "genres": "Action|Sci-Fi|War",
+      "degree": 0,
+      "gn_community": 2,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 527,
+      "title": "Schindler's List (1993)",
+      "genres": "Drama|War",
+      "degree": 5,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 919,
+      "title": "Wizard of Oz, The (1939)",
+      "genres": "Adventure|Children's|Drama|Musical",
+      "degree": 0,
+      "gn_community": 4,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 2716,
+      "title": "Ghostbusters (1984)",
+      "genres": "Comedy|Horror",
+      "degree": 1,
+      "gn_community": 1,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 541,
+      "title": "Blade Runner (1982)",
+      "genres": "Film-Noir|Sci-Fi",
+      "degree": 6,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 924,
+      "title": "2001: A Space Odyssey (1968)",
+      "genres": "Drama|Mystery|Sci-Fi|Thriller",
+      "degree": 1,
+      "gn_community": 1,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 34,
+      "title": "Babe (1995)",
+      "genres": "Children's|Comedy|Drama",
+      "degree": 0,
+      "gn_community": 5,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 296,
+      "title": "Pulp Fiction (1994)",
+      "genres": "Crime|Drama",
+      "degree": 7,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1193,
+      "title": "One Flew Over the Cuckoo's Nest (1975)",
+      "genres": "Drama",
+      "degree": 0,
+      "gn_community": 6,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 2858,
+      "title": "American Beauty (1999)",
+      "genres": "Comedy|Drama",
+      "degree": 6,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2987,
+      "title": "Who Framed Roger Rabbit? (1988)",
+      "genres": "Adventure|Animation|Film-Noir",
+      "degree": 0,
+      "gn_community": 7,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1196,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "genres": "Action|Adventure|Drama|Sci-Fi|War",
+      "degree": 14,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1580,
+      "title": "Men in Black (1997)",
+      "genres": "Action|Adventure|Comedy|Sci-Fi",
+      "degree": 3,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1198,
+      "title": "Raiders of the Lost Ark (1981)",
+      "genres": "Action|Adventure",
+      "degree": 12,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1197,
+      "title": "Princess Bride, The (1987)",
+      "genres": "Action|Adventure|Comedy|Romance",
+      "degree": 3,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1200,
+      "title": "Aliens (1986)",
+      "genres": "Action|Sci-Fi|Thriller|War",
+      "degree": 7,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 50,
+      "title": "Usual Suspects, The (1995)",
+      "genres": "Crime|Thriller",
+      "degree": 5,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2355,
+      "title": "Bug's Life, A (1998)",
+      "genres": "Animation|Children's|Comedy",
+      "degree": 0,
+      "gn_community": 8,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 2997,
+      "title": "Being John Malkovich (1999)",
+      "genres": "Comedy",
+      "degree": 1,
+      "gn_community": 3,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1210,
+      "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+      "genres": "Action|Adventure|Romance|Sci-Fi|War",
+      "degree": 7,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 318,
+      "title": "Shawshank Redemption, The (1994)",
+      "genres": "Drama",
+      "degree": 8,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1214,
+      "title": "Alien (1979)",
+      "genres": "Action|Horror|Sci-Fi|Thriller",
+      "degree": 9,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2628,
+      "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+      "genres": "Action|Adventure|Fantasy|Sci-Fi",
+      "degree": 0,
+      "gn_community": 9,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1221,
+      "title": "Godfather: Part II, The (1974)",
+      "genres": "Action|Crime|Drama",
+      "degree": 1,
+      "gn_community": 1,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1097,
+      "title": "E.T. the Extra-Terrestrial (1982)",
+      "genres": "Children's|Drama|Fantasy|Sci-Fi",
+      "degree": 3,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2762,
+      "title": "Sixth Sense, The (1999)",
+      "genres": "Thriller",
+      "degree": 3,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 457,
+      "title": "Fugitive, The (1993)",
+      "genres": "Action|Thriller",
+      "degree": 5,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 589,
+      "title": "Terminator 2: Judgment Day (1991)",
+      "genres": "Action|Sci-Fi|Thriller",
+      "degree": 14,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 593,
+      "title": "Silence of the Lambs, The (1991)",
+      "genres": "Drama|Thriller",
+      "degree": 9,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1617,
+      "title": "L.A. Confidential (1997)",
+      "genres": "Crime|Film-Noir|Mystery|Thriller",
+      "degree": 4,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1240,
+      "title": "Terminator, The (1984)",
+      "genres": "Action|Sci-Fi|Thriller",
+      "degree": 10,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 858,
+      "title": "Godfather, The (1972)",
+      "genres": "Action|Crime|Drama",
+      "degree": 4,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2396,
+      "title": "Shakespeare in Love (1998)",
+      "genres": "Comedy|Romance",
+      "degree": 0,
+      "gn_community": 10,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 480,
+      "title": "Jurassic Park (1993)",
+      "genres": "Action|Adventure|Sci-Fi",
+      "degree": 3,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 608,
+      "title": "Fargo (1996)",
+      "genres": "Crime|Drama|Thriller",
+      "degree": 7,
+      "gn_community": 3,
+      "cpm_communities": [
+        1
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 356,
+      "title": "Forrest Gump (1994)",
+      "genres": "Comedy|Romance|War",
+      "degree": 0,
+      "gn_community": 11,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 2916,
+      "title": "Total Recall (1990)",
+      "genres": "Action|Adventure|Sci-Fi|Thriller",
+      "degree": 2,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 2791,
+      "title": "Airplane! (1980)",
+      "genres": "Comedy",
+      "degree": 0,
+      "gn_community": 12,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 3175,
+      "title": "Galaxy Quest (1999)",
+      "genres": "Adventure|Comedy|Sci-Fi",
+      "degree": 0,
+      "gn_community": 13,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1127,
+      "title": "Abyss, The (1989)",
+      "genres": "Action|Adventure|Sci-Fi|Thriller",
+      "degree": 0,
+      "gn_community": 14,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1259,
+      "title": "Stand by Me (1986)",
+      "genres": "Adventure|Comedy|Drama",
+      "degree": 0,
+      "gn_community": 15,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 2028,
+      "title": "Saving Private Ryan (1998)",
+      "genres": "Action|Drama|War",
+      "degree": 10,
+      "gn_community": 1,
+      "cpm_communities": [
+        0,
+        1
+      ],
+      "is_overlapping": true
+    },
+    {
+      "id": 1387,
+      "title": "Jaws (1975)",
+      "genres": "Action|Horror",
+      "degree": 1,
+      "gn_community": 1,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 110,
+      "title": "Braveheart (1995)",
+      "genres": "Action|Drama|War",
+      "degree": 4,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 1265,
+      "title": "Groundhog Day (1993)",
+      "genres": "Comedy|Romance",
+      "degree": 0,
+      "gn_community": 16,
+      "cpm_communities": [],
+      "is_overlapping": false
+    },
+    {
+      "id": 1270,
+      "title": "Back to the Future (1985)",
+      "genres": "Comedy|Sci-Fi",
+      "degree": 7,
+      "gn_community": 1,
+      "cpm_communities": [
+        0
+      ],
+      "is_overlapping": false
+    },
+    {
+      "id": 3578,
+      "title": "Gladiator (2000)",
+      "genres": "Action|Drama",
+      "degree": 0,
+      "gn_community": 17,
+      "cpm_communities": [],
+      "is_overlapping": false
+    }
+  ],
+  "edges": [
+    {
+      "source": 260,
+      "target": 2571,
+      "weight": 0.447,
+      "shared_users": 1480
+    },
+    {
+      "source": 260,
+      "target": 541,
+      "weight": 0.363,
+      "shared_users": 1093
+    },
+    {
+      "source": 260,
+      "target": 1196,
+      "weight": 0.618,
+      "shared_users": 1960
+    },
+    {
+      "source": 260,
+      "target": 1198,
+      "weight": 0.519,
+      "shared_users": 1667
+    },
+    {
+      "source": 260,
+      "target": 1197,
+      "weight": 0.387,
+      "shared_users": 1269
+    },
+    {
+      "source": 260,
+      "target": 1200,
+      "weight": 0.379,
+      "shared_users": 1112
+    },
+    {
+      "source": 260,
+      "target": 1210,
+      "weight": 0.502,
+      "shared_users": 1587
+    },
+    {
+      "source": 260,
+      "target": 1214,
+      "weight": 0.418,
+      "shared_users": 1252
+    },
+    {
+      "source": 260,
+      "target": 1097,
+      "weight": 0.371,
+      "shared_users": 1154
+    },
+    {
+      "source": 260,
+      "target": 589,
+      "weight": 0.403,
+      "shared_users": 1340
+    },
+    {
+      "source": 260,
+      "target": 1240,
+      "weight": 0.431,
+      "shared_users": 1297
+    },
+    {
+      "source": 260,
+      "target": 858,
+      "weight": 0.381,
+      "shared_users": 1272
+    },
+    {
+      "source": 260,
+      "target": 2028,
+      "weight": 0.367,
+      "shared_users": 1311
+    },
+    {
+      "source": 260,
+      "target": 1270,
+      "weight": 0.399,
+      "shared_users": 1293
+    },
+    {
+      "source": 2571,
+      "target": 1196,
+      "weight": 0.454,
+      "shared_users": 1462
+    },
+    {
+      "source": 2571,
+      "target": 1580,
+      "weight": 0.384,
+      "shared_users": 1059
+    },
+    {
+      "source": 2571,
+      "target": 1198,
+      "weight": 0.386,
+      "shared_users": 1235
+    },
+    {
+      "source": 2571,
+      "target": 1200,
+      "weight": 0.378,
+      "shared_users": 986
+    },
+    {
+      "source": 2571,
+      "target": 1210,
+      "weight": 0.399,
+      "shared_users": 1226
+    },
+    {
+      "source": 2571,
+      "target": 1214,
+      "weight": 0.373,
+      "shared_users": 1031
+    },
+    {
+      "source": 2571,
+      "target": 457,
+      "weight": 0.394,
+      "shared_users": 1070
+    },
+    {
+      "source": 2571,
+      "target": 589,
+      "weight": 0.486,
+      "shared_users": 1379
+    },
+    {
+      "source": 2571,
+      "target": 1240,
+      "weight": 0.413,
+      "shared_users": 1127
+    },
+    {
+      "source": 2571,
+      "target": 480,
+      "weight": 0.377,
+      "shared_users": 1069
+    },
+    {
+      "source": 2571,
+      "target": 2916,
+      "weight": 0.377,
+      "shared_users": 936
+    },
+    {
+      "source": 2571,
+      "target": 2028,
+      "weight": 0.389,
+      "shared_users": 1242
+    },
+    {
+      "source": 2571,
+      "target": 110,
+      "weight": 0.373,
+      "shared_users": 1126
+    },
+    {
+      "source": 527,
+      "target": 296,
+      "weight": 0.36,
+      "shared_users": 1017
+    },
+    {
+      "source": 527,
+      "target": 318,
+      "weight": 0.452,
+      "shared_users": 1282
+    },
+    {
+      "source": 527,
+      "target": 593,
+      "weight": 0.412,
+      "shared_users": 1262
+    },
+    {
+      "source": 527,
+      "target": 608,
+      "weight": 0.381,
+      "shared_users": 1144
+    },
+    {
+      "source": 527,
+      "target": 2028,
+      "weight": 0.407,
+      "shared_users": 1253
+    },
+    {
+      "source": 2716,
+      "target": 1270,
+      "weight": 0.361,
+      "shared_users": 918
+    },
+    {
+      "source": 541,
+      "target": 924,
+      "weight": 0.367,
+      "shared_users": 739
+    },
+    {
+      "source": 541,
+      "target": 1196,
+      "weight": 0.371,
+      "shared_users": 1081
+    },
+    {
+      "source": 541,
+      "target": 1200,
+      "weight": 0.401,
+      "shared_users": 832
+    },
+    {
+      "source": 541,
+      "target": 1214,
+      "weight": 0.412,
+      "shared_users": 907
+    },
+    {
+      "source": 541,
+      "target": 1240,
+      "weight": 0.394,
+      "shared_users": 895
+    },
+    {
+      "source": 296,
+      "target": 2858,
+      "weight": 0.372,
+      "shared_users": 1254
+    },
+    {
+      "source": 296,
+      "target": 50,
+      "weight": 0.442,
+      "shared_users": 1035
+    },
+    {
+      "source": 296,
+      "target": 318,
+      "weight": 0.423,
+      "shared_users": 1135
+    },
+    {
+      "source": 296,
+      "target": 593,
+      "weight": 0.42,
+      "shared_users": 1189
+    },
+    {
+      "source": 296,
+      "target": 1617,
+      "weight": 0.406,
+      "shared_users": 1052
+    },
+    {
+      "source": 296,
+      "target": 608,
+      "weight": 0.477,
+      "shared_users": 1241
+    },
+    {
+      "source": 2858,
+      "target": 2997,
+      "weight": 0.415,
+      "shared_users": 1352
+    },
+    {
+      "source": 2858,
+      "target": 318,
+      "weight": 0.368,
+      "shared_users": 1318
+    },
+    {
+      "source": 2858,
+      "target": 2762,
+      "weight": 0.365,
+      "shared_users": 1341
+    },
+    {
+      "source": 2858,
+      "target": 593,
+      "weight": 0.377,
+      "shared_users": 1398
+    },
+    {
+      "source": 2858,
+      "target": 608,
+      "weight": 0.387,
+      "shared_users": 1376
+    },
+    {
+      "source": 1196,
+      "target": 1198,
+      "weight": 0.514,
+      "shared_users": 1620
+    },
+    {
+      "source": 1196,
+      "target": 1197,
+      "weight": 0.406,
+      "shared_users": 1280
+    },
+    {
+      "source": 1196,
+      "target": 1200,
+      "weight": 0.403,
+      "shared_users": 1130
+    },
+    {
+      "source": 1196,
+      "target": 1210,
+      "weight": 0.547,
+      "shared_users": 1640
+    },
+    {
+      "source": 1196,
+      "target": 1214,
+      "weight": 0.395,
+      "shared_users": 1170
+    },
+    {
+      "source": 1196,
+      "target": 1097,
+      "weight": 0.381,
+      "shared_users": 1145
+    },
+    {
+      "source": 1196,
+      "target": 589,
+      "weight": 0.417,
+      "shared_users": 1340
+    },
+    {
+      "source": 1196,
+      "target": 1240,
+      "weight": 0.451,
+      "shared_users": 1304
+    },
+    {
+      "source": 1196,
+      "target": 858,
+      "weight": 0.363,
+      "shared_users": 1198
+    },
+    {
+      "source": 1196,
+      "target": 2028,
+      "weight": 0.379,
+      "shared_users": 1311
+    },
+    {
+      "source": 1196,
+      "target": 1270,
+      "weight": 0.409,
+      "shared_users": 1283
+    },
+    {
+      "source": 1580,
+      "target": 589,
+      "weight": 0.376,
+      "shared_users": 1007
+    },
+    {
+      "source": 1580,
+      "target": 480,
+      "weight": 0.398,
+      "shared_users": 960
+    },
+    {
+      "source": 1198,
+      "target": 1197,
+      "weight": 0.404,
+      "shared_users": 1203
+    },
+    {
+      "source": 1198,
+      "target": 1210,
+      "weight": 0.422,
+      "shared_users": 1301
+    },
+    {
+      "source": 1198,
+      "target": 1214,
+      "weight": 0.361,
+      "shared_users": 1030
+    },
+    {
+      "source": 1198,
+      "target": 457,
+      "weight": 0.364,
+      "shared_users": 1035
+    },
+    {
+      "source": 1198,
+      "target": 589,
+      "weight": 0.367,
+      "shared_users": 1155
+    },
+    {
+      "source": 1198,
+      "target": 1240,
+      "weight": 0.431,
+      "shared_users": 1187
+    },
+    {
+      "source": 1198,
+      "target": 858,
+      "weight": 0.375,
+      "shared_users": 1158
+    },
+    {
+      "source": 1198,
+      "target": 2028,
+      "weight": 0.379,
+      "shared_users": 1243
+    },
+    {
+      "source": 1198,
+      "target": 1270,
+      "weight": 0.379,
+      "shared_users": 1146
+    },
+    {
+      "source": 1200,
+      "target": 1214,
+      "weight": 0.514,
+      "shared_users": 1033
+    },
+    {
+      "source": 1200,
+      "target": 589,
+      "weight": 0.395,
+      "shared_users": 982
+    },
+    {
+      "source": 1200,
+      "target": 1240,
+      "weight": 0.479,
+      "shared_users": 1005
+    },
+    {
+      "source": 50,
+      "target": 318,
+      "weight": 0.382,
+      "shared_users": 1010
+    },
+    {
+      "source": 50,
+      "target": 593,
+      "weight": 0.396,
+      "shared_users": 1095
+    },
+    {
+      "source": 50,
+      "target": 1617,
+      "weight": 0.437,
+      "shared_users": 1059
+    },
+    {
+      "source": 50,
+      "target": 608,
+      "weight": 0.427,
+      "shared_users": 1102
+    },
+    {
+      "source": 1210,
+      "target": 589,
+      "weight": 0.377,
+      "shared_users": 1142
+    },
+    {
+      "source": 1210,
+      "target": 1240,
+      "weight": 0.397,
+      "shared_users": 1083
+    },
+    {
+      "source": 1210,
+      "target": 1270,
+      "weight": 0.372,
+      "shared_users": 1094
+    },
+    {
+      "source": 318,
+      "target": 2762,
+      "weight": 0.368,
+      "shared_users": 1132
+    },
+    {
+      "source": 318,
+      "target": 593,
+      "weight": 0.471,
+      "shared_users": 1377
+    },
+    {
+      "source": 318,
+      "target": 608,
+      "weight": 0.416,
+      "shared_users": 1211
+    },
+    {
+      "source": 318,
+      "target": 2028,
+      "weight": 0.401,
+      "shared_users": 1232
+    },
+    {
+      "source": 1214,
+      "target": 589,
+      "weight": 0.383,
+      "shared_users": 1015
+    },
+    {
+      "source": 1214,
+      "target": 1240,
+      "weight": 0.463,
+      "shared_users": 1046
+    },
+    {
+      "source": 1214,
+      "target": 1387,
+      "weight": 0.386,
+      "shared_users": 804
+    },
+    {
+      "source": 1221,
+      "target": 858,
+      "weight": 0.573,
+      "shared_users": 1251
+    },
+    {
+      "source": 1097,
+      "target": 1270,
+      "weight": 0.378,
+      "shared_users": 974
+    },
+    {
+      "source": 2762,
+      "target": 593,
+      "weight": 0.398,
+      "shared_users": 1256
+    },
+    {
+      "source": 457,
+      "target": 589,
+      "weight": 0.395,
+      "shared_users": 1037
+    },
+    {
+      "source": 457,
+      "target": 2028,
+      "weight": 0.373,
+      "shared_users": 1053
+    },
+    {
+      "source": 457,
+      "target": 110,
+      "weight": 0.368,
+      "shared_users": 967
+    },
+    {
+      "source": 589,
+      "target": 1240,
+      "weight": 0.476,
+      "shared_users": 1202
+    },
+    {
+      "source": 589,
+      "target": 480,
+      "weight": 0.417,
+      "shared_users": 1110
+    },
+    {
+      "source": 589,
+      "target": 2916,
+      "weight": 0.401,
+      "shared_users": 943
+    },
+    {
+      "source": 589,
+      "target": 2028,
+      "weight": 0.362,
+      "shared_users": 1143
+    },
+    {
+      "source": 589,
+      "target": 110,
+      "weight": 0.381,
+      "shared_users": 1110
+    },
+    {
+      "source": 593,
+      "target": 1617,
+      "weight": 0.381,
+      "shared_users": 1139
+    },
+    {
+      "source": 593,
+      "target": 608,
+      "weight": 0.448,
+      "shared_users": 1339
+    },
+    {
+      "source": 593,
+      "target": 2028,
+      "weight": 0.389,
+      "shared_users": 1264
+    },
+    {
+      "source": 1617,
+      "target": 608,
+      "weight": 0.424,
+      "shared_users": 1176
+    },
+    {
+      "source": 1240,
+      "target": 1270,
+      "weight": 0.37,
+      "shared_users": 970
+    },
+    {
+      "source": 2028,
+      "target": 110,
+      "weight": 0.418,
+      "shared_users": 1250
+    }
+  ]
+}

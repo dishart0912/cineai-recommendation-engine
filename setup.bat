@@ -84,6 +84,16 @@ echo.
 echo   7. Launch Streamlit UI (new terminal):
 echo      streamlit run ui\app.py
 echo.
+echo   8. Run BDA Lab Experiments (optional demo commands):
+echo      • Exp 8 (Bloom Filter)   : python bda_lab\bloom_filter.py
+echo      • Exp 9 (Flajolet-Martin): python bda_lab\flajolet_martin.py
+echo      • Exp 13 (Graph Mining)  : python bda_lab\graph_mining.py
+echo      • Exp 4 (MapReduce)      : python bda_lab\mapreduce\run_mapreduce.py
+echo      • Exp 6 (Hive Analytics) : python bda_lab\run_hive_stats.py
+echo      • Exp 10 (R Visuals)     : python bda_lab\run_r_plots.py
+echo      • Exp 7 (MongoDB)        : python bda_lab\mongo_manager.py
+echo      • Exp 1 (HDFS Commands)  : bda_lab\hdfs_ingest.bat
+echo.
 echo   Open browser: http://localhost:8501
 echo.
 pause

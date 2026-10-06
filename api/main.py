@@ -225,3 +225,114 @@ async def cv_results():
         "cv_results": store.training_metrics.get("cv_results", []),
         "best": store.training_metrics.get("best_hyperparams", {}),
     }
+
+
+# ── BDA Lab Experiment Endpoints ─────────────────────────────────────────────
+
+@app.get("/bda/experiments", tags=["BDA Experiments"])
+async def list_bda_experiments():
+    """List all BDA experiments implemented across CineAI."""
+    return {
+        "status": "success",
+        "experiments_covered": [
+            {"id": "Exp-1", "name": "HDFS Ingestion & Command Suite", "module": "bda_lab/hdfs_ingest.bat"},
+            {"id": "Exp-4", "name": "Hadoop MapReduce WordCount & Genre Frequencies", "module": "bda_lab/mapreduce/"},
+            {"id": "Exp-6", "name": "Hive Database & Descriptive Statistics", "module": "bda_lab/hive_analytics.hql"},
+            {"id": "Exp-7", "name": "MongoDB NoSQL Document Store", "module": "bda_lab/mongo_manager.py"},
+            {"id": "Exp-8", "name": "Bloom Filter O(1) Candidate Deduplication", "module": "bda_lab/bloom_filter.py"},
+            {"id": "Exp-9", "name": "Flajolet-Martin Streaming Cardinality Estimation", "module": "bda_lab/flajolet_martin.py"},
+            {"id": "Exp-10", "name": "Data Visualization using R ggplot2", "module": "bda_lab/visualizations.R"},
+            {"id": "Exp-12", "name": "Big Data 5Vs & Distributed Architecture", "module": "ui/app.py"},
+            {"id": "Exp-13", "name": "Social Graph Mining: Girvan-Newman & CPM", "module": "bda_lab/graph_mining.py"},
+        ]
+    }
+
+
+@app.get("/bda/bloom-filter/demo", tags=["BDA Experiments"])
+async def bda_bloom_filter_demo(items: int = Query(300, ge=10, le=2000)):
+    """Run live Bloom Filter membership & false positive evaluation."""
+    from bda_lab.bloom_filter import BloomFilter
+    bf = BloomFilter(expected_items=items, false_positive_rate=0.01)
+    for i in range(1, items + 1):
+        bf.add(f"movie_{i}")
+
+    false_negatives = sum(1 for i in range(1, items + 1) if not bf.contains(f"movie_{i}"))
+    test_unseen = 5000
+    false_positives = sum(1 for i in range(items + 1000, items + 1000 + test_unseen) if bf.contains(f"movie_{i}"))
+    fp_rate = (false_positives / test_unseen) * 100
+
+    stats = bf.get_stats()
+    stats["false_negatives"] = false_negatives
+    stats["tested_unseen_items"] = test_unseen
+    stats["false_positives_detected"] = false_positives
+    stats["observed_fp_rate_pct"] = round(fp_rate, 3)
+    return stats
+
+
+@app.get("/bda/flajolet-martin/stats", tags=["BDA Experiments"])
+async def bda_flajolet_martin_stats():
+    """Run streaming Flajolet-Martin distinct user cardinality estimation."""
+    from bda_lab.flajolet_martin import FlajoletMartin
+    ratings_path = os.path.join(BASE_DIR, "data", "raw", "ratings.csv")
+
+    fm = FlajoletMartin(num_hashes=32, num_groups=4)
+    exact_users = set()
+
+    if os.path.exists(ratings_path):
+        import csv
+        with open(ratings_path, "r", encoding="utf-8") as f:
+            reader = csv.reader(f)
+            next(reader, None)
+            count = 0
+            for r in reader:
+                if r:
+                    fm.add(r[0])
+                    exact_users.add(r[0])
+                    count += 1
+                    if count >= 100000:
+                        break
+
+    return fm.get_diagnostics(exact_distinct_count=len(exact_users))
+
+
+@app.get("/bda/mongodb/status", tags=["BDA Experiments"])
+async def bda_mongodb_status():
+    """Retrieve MongoDB NoSQL connection status and collection statistics."""
+    from bda_lab.mongo_manager import mongo_manager
+    return mongo_manager.get_stats()
+
+
+@app.get("/bda/graph-mining/summary", tags=["BDA Experiments"])
+async def bda_graph_mining_summary():
+    """Retrieve Girvan-Newman communities and CPM overlapping cluster analysis."""
+    graph_log = os.path.join(LOGS_DIR, "graph_communities.json")
+    if os.path.exists(graph_log):
+        with open(graph_log, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    from bda_lab.graph_mining import execute_graph_analysis
+    return execute_graph_analysis()
+
+
+@app.get("/bda/hive-stats", tags=["BDA Experiments"])
+async def bda_hive_stats():
+    """Retrieve Hive descriptive analytics report."""
+    hive_log = os.path.join(LOGS_DIR, "hive_analytics_report.json")
+    if os.path.exists(hive_log):
+        with open(hive_log, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    return {"message": "Run 'python bda_lab/run_hive_stats.py' to generate Hive statistics."}
+
+
+@app.get("/bda/mapreduce/results", tags=["BDA Experiments"])
+async def bda_mapreduce_results():
+    """Retrieve Hadoop MapReduce word count and genre frequency outputs."""
+    mr_log = os.path.join(LOGS_DIR, "mapreduce_results.json")
+    if os.path.exists(mr_log):
+        with open(mr_log, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    from bda_lab.mapreduce.run_mapreduce import run_simulated_mapreduce
+    return run_simulated_mapreduce()
+

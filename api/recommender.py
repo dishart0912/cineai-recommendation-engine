@@ -24,6 +24,16 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 MODELS_DIR = os.path.join(BASE_DIR, "models")
 LOGS_DIR = os.path.join(BASE_DIR, "logs")
 
+try:
+    from bda_lab.bloom_filter import BloomFilter
+except ImportError:
+    BloomFilter = None
+
+try:
+    from bda_lab.mongo_manager import mongo_manager
+except ImportError:
+    mongo_manager = None
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Data loading (cached in-memory at startup)
@@ -149,18 +159,26 @@ def _extract_year(title: str) -> Optional[int]:
 
 def filter_rated_candidates(candidates: List[dict], rated_movies: List[dict]) -> List[dict]:
     """
-    Bulletproof filtering of already-rated movies.
+    Bulletproof filtering of already-rated movies using BDA Bloom Filter (Exp 8).
     Checks ID (int and str) and Title (exact lower and year-stripped lower).
     """
     import re
     rated_ids = set()
     rated_titles = set()
 
+    # Initialize Bloom Filter for O(1) probabilistic deduplication
+    bf = None
+    if BloomFilter is not None and rated_movies:
+        bf = BloomFilter(expected_items=max(20, len(rated_movies) * 3), false_positive_rate=0.005)
+
     for m in rated_movies:
         mid = m.get("movie_id") if m.get("movie_id") is not None else m.get("movieId")
         if mid is not None:
             rated_ids.add(mid)
             rated_ids.add(str(mid).strip())
+            if bf:
+                bf.add(f"id:{mid}")
+                bf.add(f"id:{str(mid).strip()}")
             try:
                 rated_ids.add(int(mid))
             except (ValueError, TypeError):
@@ -169,14 +187,21 @@ def filter_rated_candidates(candidates: List[dict], rated_movies: List[dict]) ->
         t = str(m.get("title", "")).strip().lower()
         if t:
             rated_titles.add(t)
+            if bf:
+                bf.add(f"title:{t}")
             clean_t = re.sub(r"\s*\(\d{4}\).*", "", t).strip()
             if clean_t:
                 rated_titles.add(clean_t)
+                if bf:
+                    bf.add(f"title:{clean_t}")
 
     unrated = []
     for m in candidates:
         mid = m.get("movieId") if m.get("movieId") is not None else m.get("movie_id")
         if mid is not None:
+            # Check Bloom Filter membership first (O(k))
+            if bf and bf.contains(f"id:{mid}"):
+                continue
             if mid in rated_ids or str(mid).strip() in rated_ids:
                 continue
             try:
@@ -186,6 +211,8 @@ def filter_rated_candidates(candidates: List[dict], rated_movies: List[dict]) ->
                 pass
 
         t = str(m.get("title", "")).strip().lower()
+        if bf and bf.contains(f"title:{t}"):
+            continue
         if t in rated_titles:
             continue
         clean_t = re.sub(r"\s*\(\d{4}\).*", "", t).strip()
@@ -315,7 +342,14 @@ def get_collaborative_recs(rated_movies: List[dict], top_n: int = 10) -> List[di
 # ─────────────────────────────────────────────────────────────────────────────
 
 def get_precomputed_recs(user_id: int, top_n: int = 10) -> Optional[List[dict]]:
-    """Return pre-computed recommendations for a known user."""
+    """Return pre-computed recommendations for a known user (MongoDB NoSQL with local JSON fallback)."""
+    # 1. Try querying MongoDB if online (Exp 7)
+    if mongo_manager and mongo_manager.is_connected:
+        m_recs = mongo_manager.get_user_recommendations(user_id, top_n)
+        if m_recs:
+            return m_recs
+
+    # 2. In-memory cache fallback
     store.load()
     cached = store.recs_cache.get(str(user_id))
     if not cached:
