@@ -8,7 +8,14 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Dataset](https://img.shields.io/badge/Dataset-MovieLens%201M%20%2F%2025M-yellow)](https://grouplens.org/datasets/movielens/)
+[![Documentation](https://img.shields.io/badge/Docs-Team%20Guide%20%26%20Report-blueviolet)](docs/README.md)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+> [!NOTE]
+> 📚 **Team Members & Viva Prep:** All detailed documentation, academic project reports, ML formulas, and viva questions are compiled in the **[`docs/`](./docs)** folder:
+> - 📖 **[Team Reference Guide & Viva Q&A](./docs/TEAM_GUIDE.md)**
+> - 🧠 **[Machine Learning Model Details](./docs/ML_MODEL_DETAILS.md)**
+> - 📑 **[Academic Mini-Project Report](./docs/MINI_PROJECT_REPORT.md)**
 
 ---
 
