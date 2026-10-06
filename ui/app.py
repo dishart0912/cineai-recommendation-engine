@@ -467,14 +467,14 @@ Spark alternates between solving for U and V in parallel until the error stops i
         st.caption("How official Big Data Analytics (BDA) concepts power this recommendation engine in real time.")
 
         exp = st.selectbox("Choose BDA Feature to Explore", [
-            "🛡️ Exp 8 · Bloom Filter (Live Watch-History Guard)",
-            "⚡ Exp 9 · Flajolet-Martin (Streaming User Traffic Counter)",
-            "🕸️ Exp 13 · Graph Mining (Finding Movie Communities)",
-            "🐘 Exp 4 · MapReduce (Catalog Genre & Tag Processor)",
-            "🐝 Exp 6 · Hive Analytics (Catalog Sparsity & Health)",
-            "📊 Exp 10 · R Plots (Visualizing Long-Tail Taste)",
-            "🍃 Exp 7 · MongoDB (Live User Session Storage)",
-            "📁 Exp 1 · HDFS (Distributed File Storage)"
+            "🛡️ Bloom Filter (Live Watch-History Guard)",
+            "⚡ Flajolet-Martin (Streaming User Traffic Counter)",
+            "🕸️ Graph Mining (Finding Movie Communities)",
+            "🐘 MapReduce (Catalog Genre & Tag Processor)",
+            "🐝 Hive Analytics (Catalog Sparsity & Health)",
+            "📊 R Plots (Visualizing Long-Tail Taste)",
+            "🍃 MongoDB (Live User Session Storage)",
+            "📁 HDFS (Distributed File Storage)"
         ])
 
         # ── EXP 8: Bloom Filter ──
