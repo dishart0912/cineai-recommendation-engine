@@ -470,11 +470,8 @@ Spark alternates between solving for U and V in parallel until the error stops i
             "🛡️ Bloom Filter (Live Watch-History Guard)",
             "⚡ Flajolet-Martin (Streaming User Traffic Counter)",
             "🕸️ Graph Mining (Finding Movie Communities)",
-            "🐘 MapReduce (Catalog Genre & Tag Processor)",
-            "🐝 Hive Analytics (Catalog Sparsity & Health)",
-            "📊 R Plots (Visualizing Long-Tail Taste)",
             "🍃 MongoDB (Live User Session Storage)",
-            "📁 HDFS (Distributed File Storage)"
+            "📊 R Plots (Visualizing Long-Tail Taste)"
         ])
 
         # ── EXP 8: Bloom Filter ──
@@ -568,66 +565,6 @@ Spark alternates between solving for U and V in parallel until the error stops i
             else:
                 st.info("Graph communities cache loading...")
 
-        # ── EXP 4: MapReduce ──
-        elif "MapReduce" in exp:
-            st.subheader("🐘 MapReduce — Distributed Catalog Processor")
-            st.write(
-                "How does CineAI process all 1,000,000 ratings across 3,952 movies? "
-                "**MapReduce** splits the work across machines: **Map** extracts genres and keywords, "
-                "**Shuffle** groups them, and **Reduce** tallies the totals."
-            )
-
-            mr = _read_json(os.path.join(LOGS_DIR, "mapreduce_results.json"), None)
-            if mr:
-                c1, c2, c3 = st.columns(3)
-                c1.metric("Map Emissions", f"{mr.get('total_map_emissions', 0):,}")
-                c2.metric("Unique Keys Reduced", f"{mr.get('unique_reduced_keys', 0):,}")
-                c3.metric("Processing Time", f"{mr.get('execution_time_ms', 0)} ms")
-
-                st.write("**Top Catalog Genres Processed via MapReduce:**")
-                items = list(mr.get("genre_frequencies", {}).items())[:7]
-                if items:
-                    df_mr = pd.DataFrame(items, columns=["Genre", "Total Movies"])
-                    st.dataframe(df_mr, use_container_width=True, hide_index=True)
-
-        # ── EXP 6: Hive Analytics ──
-        elif "Hive" in exp:
-            st.subheader("🐝 Hive Analytics — Catalog Sparsity & Health")
-            st.write(
-                "Hive lets us query raw MovieLens data using standard SQL on top of distributed files. "
-                "Here are the core descriptive statistics that justify using AI recommendations:"
-            )
-
-            h = _read_json(os.path.join(LOGS_DIR, "hive_analytics_report.json"), None)
-            if h:
-                s = h.get("descriptive_statistics", {})
-                dm = h.get("matrix_dimensions", {})
-                c1, c2, c3, c4 = st.columns(4)
-                c1.metric("Ratings Analyzed", f"{s.get('total_ratings', 0):,}")
-                c2.metric("Mean Rating", f"{s.get('mean_rating', 0)} ★")
-                c3.metric("Rating Variance", f"{s.get('variance_rating', 0)}")
-                c4.metric("Matrix Sparsity", f"{dm.get('sparsity_pct', 0)}%")
-
-                st.info(
-                    "💡 **Why Big Data is Needed:** The matrix sparsity is **95.5%** — meaning users have only rated a tiny fraction of movies. "
-                    "Simple averages fail when 95.5% of data is missing, which is why distributed matrix factorization (ALS) is required!"
-                )
-
-        # ── EXP 10: R Plots ──
-        elif "R Plots" in exp:
-            st.subheader("📊 R Visualizations — Long-Tail Taste Decay")
-            st.write("Visualizations generated via R (`ggplot2`) showing why a recommendation engine is essential:")
-
-            d = os.path.join(LOGS_DIR, "plots_r")
-            plots = [
-                ("r_long_tail_distribution.png", "The Long-Tail Problem: Top 10% of movies get 90% of views. CineAI exists to recommend the hidden gems in the long tail!"),
-                ("r_rating_distribution.png", "Rating Distribution: Most users rate 3★ or 4★."),
-            ]
-            for fname, cap in plots:
-                fpath = os.path.join(d, fname)
-                if os.path.exists(fpath):
-                    st.image(fpath, caption=cap)
-
         # ── EXP 7: MongoDB ──
         elif "MongoDB" in exp:
             st.subheader("🍃 MongoDB — Live User Session Storage")
@@ -647,27 +584,21 @@ Spark alternates between solving for U and V in parallel until the error stops i
             }
             st.json(sample_doc)
 
-        # ── EXP 1: HDFS ──
+        # ── EXP 10: R Plots ──
         else:
-            st.subheader("📁 HDFS — Distributed Storage Architecture")
-            st.write(
-                "In production, the 1M ratings dataset is split into **128 MB blocks** and replicated **3 times** "
-                "across Hadoop DataNodes so hardware failures never cause data loss."
-            )
-            st.code("\n".join([
-                "hdfs dfs -mkdir -p /cineai/raw/ratings /cineai/raw/movies /cineai/models",
-                "hdfs dfs -put -f data/raw/ratings.csv /cineai/raw/ratings/",
-                "hdfs dfs -put -f data/raw/movies.csv  /cineai/raw/movies/",
-                "hdfs dfs -ls -R /cineai",
-                "hdfs dfs -du -h /cineai",
-            ]), language="bash")
+            st.subheader("📊 R Visualizations — Long-Tail Taste Decay")
+            st.write("Visualizations generated via R (`ggplot2`) showing why a recommendation engine is essential:")
 
-            if st.button("▶️ Execute HDFS Command Suite Live", key="btn_run_hdfs", use_container_width=True):
-                from bda_lab.run_hdfs_demo import run_pipeline_demo
-                with st.spinner("Connecting to NameNode & executing distributed commands..."):
-                    logs = run_pipeline_demo()
-                st.success("HDFS Ingestion & Verification executed successfully!")
-                st.code("\n".join(logs), language="text")
+            d = os.path.join(LOGS_DIR, "plots_r")
+            plots = [
+                ("r_long_tail_distribution.png", "The Long-Tail Problem: Top 10% of movies get 90% of views. CineAI exists to recommend the hidden gems in the long tail!"),
+                ("r_rating_distribution.png", "Rating Distribution: Most users rate 3★ or 4★."),
+            ]
+            for fname, cap in plots:
+                fpath = os.path.join(d, fname)
+                if os.path.exists(fpath):
+                    st.image(fpath, caption=cap)
+
 
 
 # ── Footer ────────────────────────────────────────────────────────────────────
