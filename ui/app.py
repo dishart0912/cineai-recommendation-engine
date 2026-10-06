@@ -655,11 +655,20 @@ Spark alternates between solving for U and V in parallel until the error stops i
                 "across Hadoop DataNodes so hardware failures never cause data loss."
             )
             st.code("\n".join([
-                "hdfs dfs -mkdir -p /cineai/raw",
-                "hdfs dfs -put -f data/raw/ratings.csv /cineai/raw/",
+                "hdfs dfs -mkdir -p /cineai/raw/ratings /cineai/raw/movies /cineai/models",
+                "hdfs dfs -put -f data/raw/ratings.csv /cineai/raw/ratings/",
+                "hdfs dfs -put -f data/raw/movies.csv  /cineai/raw/movies/",
                 "hdfs dfs -ls -R /cineai",
                 "hdfs dfs -du -h /cineai",
             ]), language="bash")
+
+            if st.button("▶️ Execute HDFS Command Suite Live", key="btn_run_hdfs", use_container_width=True):
+                from bda_lab.run_hdfs_demo import run_pipeline_demo
+                with st.spinner("Connecting to NameNode & executing distributed commands..."):
+                    logs = run_pipeline_demo()
+                st.success("HDFS Ingestion & Verification executed successfully!")
+                st.code("\n".join(logs), language="text")
+
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown(f"<div style='text-align:center;color:#b08a68;font-size:0.8rem;padding:2rem 0 1rem;'>"
